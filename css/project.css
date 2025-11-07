@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Inter", sans-serif;
+  background-color: #0f0f0f;
+  overflow-x: hidden;
+}
+
+/* ----------------------------------
+   GENERAL STYLING
+---------------------------------- */
+
+h1{
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -0.1rem;
+  line-height: 1.2;
+}
+
+p {
+  font-family: "Geist Mono";
+  font-weight: 400;
+  font-size: 0.85;
+}
+
+a, p {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.intro,
+.outro {
+  padding: 2rem;
+  align-content: center;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.intro h1,
+.outro h1{
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  will-change: transform;
+  opacity: 0;
+}
+
+/* ----------------------------------
+   SLIDER CONTENT
+---------------------------------- */
+
+.slider-images {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-images::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.slider-images img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.slider-title {
+  position: absolute;
+  top: 50%;
+  left:2rem;
+  transform: translateY(-50%);
+  width: 50%;
+  color: #fff;
+}
+
+.slider-btn a{
+  position: absolute;
+  top: 80%;
+  left:80%;
+  transform: translateY(50%);
+  /* color: #fff; */
+  display: inline-block;
+  /* background: #0f0f0f; */
+  padding: 0.9rem 2.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(255,255,255, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.slider-btn a:hover{
+  background-color: #fff;
+  color: #0e101f;
+}
+
+.slider-indicator {
+  position: absolute;
+  top: 50%;
+  right:2rem;
+  transform: translateY(-50%);
+  padding: 8px;
+}
+
+.slider-indices p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color:#fff;
+}
+
+.index {
+  position: relative;
+  width: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  will-change: opacity;
+  padding: 8px;
+}
+
+.marker {
+  position: relative;
+  width: 0.75rem;
+  height: 1px;
+  background-color: #fff;
+  transform-origin: right;
+  will-change: transform;
+  transform: scaleX(0);
+}
+
+.slider-progress-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.35);
+}
+
+.slider-progress {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  width: 3px;
+  height: 100%;
+  background-color: #fff;
+  transform-origin: top;
+  will-change: transform;
+}
+
+.line {
+  position: relative;
+  display: block;
+  will-change: transform; 
+}
+
+/* ----------------------------------
+   NAV + LOGO
+---------------------------------- */
+.logo-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  z-index: 3;
+}
+
+.logo {
+  border: 1px solid rgba(255,255,255, 0.1);
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+}
+
+.logo p {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: #fff;
+  font-family: "Geist Mono";
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.menu-toggle {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.menu-toggle p{
+  position: absolute;
+  transform-origin: top left;
+  will-change: transform, opacity;
+} 
+
+.menu-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100svh; 
+  background-color: #0e101f;
+  /* background-color: #242321bd; */
+  z-index: 1; 
+}
+
+.menu-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  transform-origin: left bottom;
+  will-change: transform, opacity;
+}
+
+.menu-items {
+  width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2.5em;
+}
+
+.col-lg {
+  flex: 3;
+}
+
+.col-sm {
+  flex: 2;
+}
+
+.menu-items .col-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-preview-img {
+  position: relative;
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu-preview-img img {
+  position: absolute;
+  will-change: transform, opacity;
+}
+
+.menu-items .col-sm {
+  padding: 2.5em 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5em;
+}
+
+.menu-links, 
+.menu-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.link, .social {
+  padding-bottom: 6px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.link a, 
+.social a{
+  display: inline-block;
+  will-change: transform;
+  transition: color 0.5s;
+}
+
+.link a {
+  font-size: 3.5rem;
+  letter-spacing: -0.02rem;
+}
+
+.social a {
+  font-size: 1.5rem;
+  color: #f5cece;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+.link a::after,
+.social a::after {
+  position:absolute;
+  content: " ";
+  top: 102.5%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.6, 0, 0.4, 1);
+}
+
+.link a:hover::after,
+.social a:hover::after{
+  transform: scaleX(1);
+  transform-origin: right;
+} 
+
+.menu-toggle p#menu-close {
+  opacity: 0;
+  transform: translateX(-5px) translateY(10px) rotate(5deg);
+}
+
+.link a,
+.social a{
+  transform: translateY(120%);
+  opacity: 0.25;
+}
+
+.menu-content {
+  transform: translateX(-100px) translateY(-100px) scale(1.5) rotate(-15deg);
+  opacity: 0;
+}
+
+.menu-overlay {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+}
+
+/* ----------------------------------
+   POINTER
+---------------------------------- */
+
+.intro {
+  pointer-events: none;
+}
+
+.intro .nav,
+.intro .nav a,
+.intro .btn a {
+  pointer-events: auto;
+  z-index: 3;
+}
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+
+footer {  
+  position: absolute;     
+  bottom: 1rem;     
+  left: 3rem;     
+  font-size: 0.8rem;     
+  color: #999; 
+}
+
+/* ----------------------------------
+   RESPONSIVE
+---------------------------------- */
+@media (max-width: 1450px) {
+  h1 { font-size: 2.5rem; }
+  .cta { width: 30%; left: 45%; }
+  /* #menu-open {display: flex;} */
+}
+
+@media (max-width: 1000px) {
+  .cta { width: 30%; left: 50%; }
+  .menu-items .col-lg { display: none;}
+  .link a::after,
+  .social a::after { display: none;}
+  h1 { font-size: 1.5rem;}
+  .slider-btn a{left:10%}
+}
+
+
+@media (max-width: 600px) {
+  .cta { width: 70%; left: 45%; }
+  /* #menu-open {left: 80%;} */
+}
