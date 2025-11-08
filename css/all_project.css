@@ -273,6 +273,15 @@ a {
   padding: 1rem;
 }
 
+.down-arrow {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.down-arrow i {
+  rotate: 180deg;
+}
+
 .cards {
   position: relative;
   width: 500px;
@@ -329,9 +338,8 @@ a {
     margin-bottom: 2rem;
     width: 500px;
 }
-.visit-btn {
+.visit-btn, .download-btn {
     display: inline-block;
-    background: #333;
     padding: 0.9rem 1.8rem;
     color: #fff;
     border-radius: 8px;
@@ -339,7 +347,16 @@ a {
     font-weight: 700;
     transition: all 0.3s ease;
 }
-.visit-btn:hover {
+
+.visit-btn {
+    background: #752424;
+}
+
+.download-btn {
+    background: #2b8b3b;
+}
+
+.visit-btn:hover, .download-btn:hover {
     background: #fff;
     color: #000;
 }
@@ -363,12 +380,19 @@ a {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    width: 70px;
-    height: 50px;
+    width: 50px;
+    height: 30px;
     color: #000;
     background-color: #fff;
     border-radius: 55px;
     margin-left: 2.5%;   
+}
+
+.back-btn a:hover {
+    color: #fff;
+    border: 3px solid rgba(255,255,255, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
 }
 
 /* ----------------------------------
@@ -420,6 +444,9 @@ footer {
   .project-info h2 {
     font-size: 2rem;
     }
+  .project-tech p {
+    padding-right: 10rem;
+    }
   .menu-items .col-lg { display: none;}
   .link a::after,
   .social a::after { display: none;}
@@ -441,9 +468,9 @@ footer {
   .project-tech p { 
     font-size: 0.8rem; 
     }
-  .project-tech {
-    margin-left: 9%;
-  }
+    .project-tech {
+      margin-left: 12rem;
+    }
   footer { 
     left: 1rem; 
     bottom: 0.5rem; 

@@ -66,6 +66,18 @@ section {
   color: #fff;
 }
 
+.down-arrow {
+  font-size: 2rem;
+  position: absolute;
+  text-align: center;
+  left: 50%;
+  padding-top: 12rem;
+}
+
+.down-arrow i {
+  rotate: 180deg;
+}
+
 .intro h1,
 .outro h1{
   width: 50%;

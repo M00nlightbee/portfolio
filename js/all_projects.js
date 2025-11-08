@@ -1,4 +1,4 @@
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, CustomEase,CustomBounce);
 
 document.addEventListener("DOMContentLoaded", () => {
     const lenis = new Lenis();
@@ -172,5 +172,24 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         });
     }
+
+        //Create a custom bounce ease:
+    CustomBounce.create("myBounce", {
+        strength: 0.6,
+        squash: 3,
+        squashID: "myBounce-squash",
+    });
+
+    //do the bounce by affecting the "y" property.
+    gsap.from(".down-arrow", { duration: 2, y: -100, ease: "myBounce", repeat: -1, yoyo: true });
+
+    //and do the squash/stretch at the same time:
+    gsap.to(".down-arrow", {
+        duration: 2,
+        scaleX: 1.4,
+        scaleY: 0.6,
+        ease: "myBounce-squash",
+        transformOrigin: "center bottom",
+    });
 
 });
