@@ -395,6 +395,14 @@ a {
     backdrop-filter: blur(10px);
 }
 
+.fa-copy{
+  cursor: pointer;
+}
+
+.fa-copy:hover{
+  color: #2b8b3b;
+}
+
 /* ----------------------------------
    FOOTER
 ---------------------------------- */
